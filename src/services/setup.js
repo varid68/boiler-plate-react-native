@@ -1,4 +1,4 @@
-import { CONTENT_TYPE_JSON, TYPE_AUTH } from '../configs/apiConfigs'
+import { CONTENT_TYPE_JSON, TYPE_AUTH } from '../configs/apiConfig'
 
 export const GET = 'get'
 export const POST = 'post'
@@ -12,8 +12,9 @@ export const defaultHeader = {
 }
 
 export function headerAuth(token) {
-  let headers = {
+  const headers = {
     'Content-Type': CONTENT_TYPE_JSON,
+    // eslint-disable-next-line
     'Authorization': token
   }
   return headers

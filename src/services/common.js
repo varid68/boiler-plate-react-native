@@ -2,9 +2,9 @@ import { ToastAndroid } from 'react-native'
 
 // FORMAT RUPIAH
 export function setCurrency(bilangan) {
-  let reverse = bilangan.toString().split('').reverse().join(''),
-    ribuan = reverse.match(/\d{1,3}/g);
-  ribuan = ribuan.join(',').split('').reverse().join('');
+  const reverse = bilangan.toString().split('').reverse().join('')
+  let ribuan = reverse.match(/\d{1,3}/g)
+  ribuan = ribuan.join(',').split('').reverse().join('')
 
   return ribuan
 }
@@ -24,7 +24,7 @@ export function showToast(text, option = null) {
 export function capitalize(text) {
   const result = text.toLowerCase()
     .split(' ')
-    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
     .join(' ')
 
   return result

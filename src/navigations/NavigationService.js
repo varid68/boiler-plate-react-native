@@ -1,9 +1,10 @@
-import { NavigationActions, StackActions } from 'react-navigation';
+/* eslint no-underscore-dangle:0 */
+import { NavigationActions, StackActions } from 'react-navigation'
 
-let _navigator;
+let _navigator
 
 function setTopLevelNavigator(navigatorRef) {
-  _navigator = navigatorRef;
+  _navigator = navigatorRef
 }
 
 function navigate(routeName, params) {

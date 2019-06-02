@@ -1,11 +1,10 @@
+/* eslint no-multi-spaces:0 */
 import { Platform, Dimensions } from 'react-native'
 
 // SCREEN WIDTH & HEIGHT
 export const SCREEN_WIDTH = Dimensions.get('window').width
 export const SCREEN_HEIGHT = Dimensions.get('window').height
 
-// Status Bar Height
-//export const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? (isIphoneX() ? 39 : 20) : 0
 
 // Fonts WebView
 export const WEB_DEFAULT_FONT_FAMILY = Platform.OS === 'android' ? 'OpenSans-Regular' : '-apple-system'

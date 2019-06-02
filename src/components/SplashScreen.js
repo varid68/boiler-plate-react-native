@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { View, Text, StatusBar } from 'react-native';
-import NavigationService from '../navigations/NavigationService';
+import React, { useEffect } from 'react'
+import { View, Text, StatusBar } from 'react-native'
+import NavigationService from '../navigations/NavigationService'
 
 const SplashScreen = () => {
   useEffect(() => {
@@ -9,9 +9,9 @@ const SplashScreen = () => {
 
   return (
     <View>
-      <StatusBar hidden={true} />
+      <StatusBar hidden />
       <Text>Ini SplashScreen</Text>
-    </View >
+    </View>
   )
 }
 
