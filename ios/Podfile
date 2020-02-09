@@ -33,7 +33,15 @@ target 'AwesomeProject' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'RNSnackbar', :path => '../node_modules/react-native-snackbar'
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'react-native-version-number', :path => '../node_modules/react-native-version-number'
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
+  
   
   target 'AwesomeProjectTests' do
     inherit! :search_paths

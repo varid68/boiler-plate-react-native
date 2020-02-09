@@ -35,7 +35,6 @@ export const GRAY_DARK        = '#4c4c4c'
 export const GRAY_DARK_75     = '#989898'
 export const GRAY_DARK_ALT    = '#8c8c8c'
 export const MERCURY          = '#e3e3e3'
-export const TRANSPARENT      = 'transparent'
 
 export const BLUE             = '#5ca0d3'
 export const YELLOW           = '#fcd307'
@@ -65,18 +64,6 @@ export const TEXT_SMALL = {
   fontSize: FONT_SIZE_SMALL,
 }
 
-export const TEXT_SMALL_RED = {
-  fontFamily: DEFAULT_FONT_FAMILY,
-  fontSize: FONT_SIZE_SMALL,
-  color: RED
-}
-
-export const TEXT_SMALL_GREEN = {
-  fontFamily: DEFAULT_FONT_FAMILY_BOLD,
-  fontSize: FONT_SIZE_SMALL,
-  color: GREEN
-}
-
 export const TEXT_BASE = {
   fontFamily: DEFAULT_FONT_FAMILY,
   fontSize: DEFAULT_FONT_SIZE,
@@ -103,12 +90,6 @@ export const TEXT_LARGE = {
   fontSize: FONT_SIZE_LARGE,
 }
 
-export const TEXT_LARGER_BOLD = {
-  fontFamily: DEFAULT_FONT_FAMILY_BOLD,
-  fontWeight: Platform.OS === 'ios' ? 'bold' : null,
-  fontSize: FONT_SIZE_LARGER
-}
-
 
 // posisitions
 export const LIST_ITEM_BASE = { // Basic list item
@@ -118,12 +99,6 @@ export const LIST_ITEM_BASE = { // Basic list item
 
 export const ALIGNING_ITEM_CENTER = {
   flexDirection: 'row',
-  alignItems: 'center'
-}
-
-export const ROW_SPACE_CENTER = {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
   alignItems: 'center'
 }
 
