@@ -1,17 +1,13 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import store from './src/redux/storage'
-import AppNavigator from './src/navigations/AppNavigator';
-import NavigationService from './src/navigations/NavigationService'
+import 'react-native-gesture-handler'
+import { NavigationContainer } from '@react-navigation/native'
+import AppNavigator from './src/navigations/AppNavigator'
+
 
 export default function index() {
   return (
-    <Provider store={store}>
-      <AppNavigator
-        ref={navigatorRef => {
-          NavigationService.setTopLevelNavigator(navigatorRef)
-        }}
-      />
-    </Provider >
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   )
 }

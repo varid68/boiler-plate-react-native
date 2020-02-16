@@ -1,57 +1,77 @@
 import axios from 'axios'
-import { generalAxios } from './axios_config'
+import { axiosGenerate } from '../configs/axios'
 
-generalAxios()
+axiosGenerate()
 
-export const get_api = (urlStr) => {
+export const GetListData = strUrl => {
   return new Promise((resolve, reject) => {
-    axios.get(urlStr).then(res => {
-      resolve(res.data)
-    })
+    axios
+      .get(strUrl)
+      .then(res => {
+        if (res.data.status_code === 200) {
+          resolve(res.data)
+
+          return
+        }
+
+        reject(res.data)
+      })
       .catch(e => {
         reject(e.response)
       })
   })
 }
 
-
-export const post_api = (urlStr, body) => {
+export const insertData = (strUrl, body) => {
   return new Promise((resolve, reject) => {
-    axios.post(urlStr, body).then(res => {
-      resolve(res.data)
-    })
+    axios
+      .post(strUrl, body)
+      .then(res => {
+        if (res.data.status_code === 200) {
+          resolve(res.data.payload)
+          return
+        }
+
+        reject(res.data)
+      })
       .catch(e => {
         reject(e.response)
       })
   })
 }
 
-
-export const put_api = (urlStr, body) => {
+export const EditData = (strUrl, body) => {
   return new Promise((resolve, reject) => {
-    axios.put(urlStr, body).then(res => {
-      resolve(res.data)
-    })
+    axios
+      .put(strUrl, body)
+      .then(res => {
+        if (res.data.status_code === 200) {
+          resolve(res.data.payload)
+          return
+        }
+
+        reject(res.data)
+      })
       .catch(e => {
         reject(e.response)
       })
   })
 }
 
-
-export const delete_api = (urlStr) => {
+export const DeleteData = strUrl => {
   return new Promise((resolve, reject) => {
-    axios.delete(urlStr).then(res => {
-      resolve(res.data)
-    })
+    axios
+      .delete(strUrl)
+      .then(res => {
+        if (res.data.status_code === 200) {
+          resolve(res.data.payload)
+          return
+        }
+
+        reject(res.data)
+      })
       .catch(e => {
         reject(e.response)
       })
   })
 }
-
-
-
-
-
-
