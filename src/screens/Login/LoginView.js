@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { View, Image, StatusBar, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import { LoginContext } from './LoginContext'
-import { OSLO_GRAY, BLUE_2, WHITE } from '../../constants/Colors'
+import { OSLO_GRAY, WHITE, BLACK_ALL, BLACK } from '../../constants/Colors'
 import Text from '../../components/Text'
 import styles from './LoginStyles'
-import { JUSTIFY_CENTER } from '../../constants/Styles'
+import { ALIGNING_ITEM_CENTER } from '../../constants/Styles'
 import Feather from 'react-native-vector-icons/Feather'
 
 
@@ -13,7 +13,7 @@ const LoginView = ({ navigation }) => {
 
   return (
     <ScrollView keyboardShouldPersistTaps={'handled'}>
-      <StatusBar translucent backgroundColor='transparent' />
+      <StatusBar backgroundColor={BLACK_ALL} />
 
       <View style={{ backgroundColor: WHITE }}>
         <Image
@@ -21,23 +21,17 @@ const LoginView = ({ navigation }) => {
           source={require('../../assets/images/login.png')} />
 
         <View style={styles.wrapper}>
-          <Text
-            centered
-            color={OSLO_GRAY}
-            size='xmini'
-            style={{ marginVertical: 10 }}>
-            Login instantly
-          </Text>
-          <View style={JUSTIFY_CENTER}>
-            <TouchableOpacity style={[styles.instantlyWrap, { marginRight: 8 }]}>
+          <View style={ALIGNING_ITEM_CENTER}>
+            <Text style={{ flex: 1 }}>Login instantly with</Text>
+            <TouchableOpacity>
               <Image
-                style={styles.iconFbGoogle}
-                source={require('../../assets/images/facebook-logo.png')} />
+                style={{ height: 40, width: 40 }}
+                source={require('../../assets/images/facebook.png')} />
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.instantlyWrap, { marginLeft: 8 }]}>
+            <TouchableOpacity style={{ marginLeft: 10 }}>
               <Image
-                style={styles.iconFbGoogle}
-                source={require('../../assets/images/google-logo.png')} />
+                style={{ height: 40, width: 40 }}
+                source={require('../../assets/images/google-plus.png')} />
             </TouchableOpacity>
           </View>
 
@@ -52,7 +46,7 @@ const LoginView = ({ navigation }) => {
           <Text
             color={OSLO_GRAY}
             size='tiny'>
-            Username
+            Username / Email
             </Text>
           <TextInput
             style={styles.inputLogin} />
@@ -78,9 +72,10 @@ const LoginView = ({ navigation }) => {
 
           <TouchableOpacity>
             <Text
+              weight={700}
               size='tiny'
               style={{ textAlign: 'right', marginVertical: 15 }}
-              color={BLUE_2}>
+              color={BLACK_ALL}>
               Forgot password?
               </Text>
           </TouchableOpacity>
@@ -91,7 +86,7 @@ const LoginView = ({ navigation }) => {
               centered
               color={OSLO_GRAY}
               size='xmini'
-              color={WHITE}>
+              color={BLACK}>
               Login to my account
               </Text>
           </TouchableOpacity>

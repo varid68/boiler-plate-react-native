@@ -25,6 +25,7 @@ export const  BIGSTONE         = '#19223c'
 
 export const  OSLO_GRAY        = '#8b959a'
 export const  BLUE_2           = '#0857ab'
+export const  YELLOW_25        = '#ffc72a'
 
 export const  OPACITY_MODAL    = 'rgba(0, 0, 0, 0.5)'
 export const  OPACITY_LIGHT    = 'rgba(0, 0, 0, 0.1)'

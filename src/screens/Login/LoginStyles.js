@@ -1,16 +1,16 @@
-import { StyleSheet, Dimensions } from 'react-native'
-import { GHOST, BLUE_2 } from '../../constants/Colors'
-import { WP100, WP50 } from '../../constants/Sizes'
+import { StyleSheet } from 'react-native'
+import { GHOST, YELLOW_25 } from '../../constants/Colors'
+import { WP100, WP50, HP100 } from '../../constants/Sizes'
 import { JUSTIFY_CENTER, ITEMS_CENTER } from '../../constants/Styles'
 
 
 export default StyleSheet.create({
   imgLogin: {
     width: WP100,
-    height: 0.52 * Dimensions.get('window').height
+    height: 0.52 * HP100
   },
   wrapper: {
-    height: 0.48 * Dimensions.get('window').height,
+    height: HP100 - (0.52 * HP100),
     paddingHorizontal: 20
   },
   instantlyWrap: {
@@ -56,7 +56,7 @@ export default StyleSheet.create({
     borderBottomRightRadius: 5
   },
   btnLogin: {
-    backgroundColor: BLUE_2,
+    backgroundColor: YELLOW_25,
     borderRadius: 5,
     paddingVertical: 10
   }
