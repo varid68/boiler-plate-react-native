@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { View, Image, StatusBar, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import { LoginContext } from './LoginContext'
-import { OSLO_GRAY, BLUE_2 } from '../../constants/Colors'
+import { OSLO_GRAY, BLUE_2, WHITE } from '../../constants/Colors'
 import Text from '../../components/Text'
 import styles from './LoginStyles'
 import { JUSTIFY_CENTER } from '../../constants/Styles'
@@ -29,12 +29,12 @@ const LoginView = ({ navigation }) => {
             Login instantly
           </Text>
           <View style={JUSTIFY_CENTER}>
-            <TouchableOpacity style={styles.instantlyWrap}>
+            <TouchableOpacity style={[styles.instantlyWrap, { marginRight: 8 }]}>
               <Image
                 style={styles.iconFbGoogle}
                 source={require('../../assets/images/facebook-logo.png')} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.instantlyWrap}>
+            <TouchableOpacity style={[styles.instantlyWrap, { marginLeft: 8 }]}>
               <Image
                 style={styles.iconFbGoogle}
                 source={require('../../assets/images/google-logo.png')} />

@@ -19,7 +19,6 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     paddingVertical: 8,
-    marginRight: 10,
     width: WP50 - 30
   },
   iconFbGoogle: {
