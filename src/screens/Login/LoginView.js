@@ -6,6 +6,7 @@ import Text from '../../components/Text'
 import styles from './LoginStyles'
 import { ALIGNING_ITEM_CENTER } from '../../constants/Styles'
 import Feather from 'react-native-vector-icons/Feather'
+import Spinner from '../../components/Spinner'
 
 
 const LoginView = ({ navigation }) => {
@@ -49,6 +50,8 @@ const LoginView = ({ navigation }) => {
             Username / Email
             </Text>
           <TextInput
+            onChangeText={text => value._onChangeFields('user_email', text)}
+            value={value.fields.user_email}
             style={styles.inputLogin} />
 
           <Text
@@ -61,8 +64,13 @@ const LoginView = ({ navigation }) => {
             flexDirection: 'row'
           }}>
             <TextInput
+              secureTextEntry={value.showPassword}
+              onChangeText={text => value._onChangeFields('user_password', text)}
+              value={value.fields.user_password}
               style={styles.inputLogin2} />
-            <TouchableOpacity style={styles.showPassword}>
+            <TouchableOpacity
+              onPress={value._togglePassword}
+              style={styles.showPassword}>
               <Feather
                 size={25}
                 name='eye'
@@ -80,16 +88,26 @@ const LoginView = ({ navigation }) => {
               </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.btnLogin}>
-            <Text
-              centered
-              color={OSLO_GRAY}
-              size='xmini'
-              color={BLACK}>
-              Login to my account
+          {
+            value.loading ?
+              <View>
+                <Spinner />
+                <Text centered>Please wait..</Text>
+              </View>
+
+              :
+              <TouchableOpacity
+                onPress={value._validate}
+                style={styles.btnLogin}>
+                <Text
+                  centered
+                  color={OSLO_GRAY}
+                  size='xmini'
+                  color={BLACK}>
+                  Login to my account
               </Text>
-          </TouchableOpacity>
+              </TouchableOpacity>
+          }
 
           {/* <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <Text size='tiny'>Don’t have an account?</Text>

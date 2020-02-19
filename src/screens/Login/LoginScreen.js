@@ -5,7 +5,7 @@ import LoginContextProvider from './LoginContext'
 
 const LoginScreen = ({ navigation }) => {
   return (
-    <LoginContextProvider>
+    <LoginContextProvider navigation={navigation}>
       <LoginView navigation={navigation} />
     </LoginContextProvider>
   )

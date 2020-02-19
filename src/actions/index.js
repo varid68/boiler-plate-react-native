@@ -3,7 +3,7 @@ import { axiosGenerate } from '../configs/axios'
 
 axiosGenerate()
 
-export const GetListData = strUrl => {
+export const getListData = strUrl => {
   return new Promise((resolve, reject) => {
     axios
       .get(strUrl)
@@ -40,7 +40,7 @@ export const insertData = (strUrl, body) => {
   })
 }
 
-export const EditData = (strUrl, body) => {
+export const editData = (strUrl, body) => {
   return new Promise((resolve, reject) => {
     axios
       .put(strUrl, body)
@@ -58,7 +58,7 @@ export const EditData = (strUrl, body) => {
   })
 }
 
-export const DeleteData = strUrl => {
+export const deleteData = strUrl => {
   return new Promise((resolve, reject) => {
     axios
       .delete(strUrl)

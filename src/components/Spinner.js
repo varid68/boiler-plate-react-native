@@ -1,6 +1,7 @@
-import React from 'react';
-import { ActivityIndicator } from 'react-native';
-import { RED, ITEMS_CENTER } from '../../configs/styles';
+import React from 'react'
+import { ActivityIndicator } from 'react-native'
+import { YELLOW } from '../constants/Colors'
+import { ITEMS_CENTER } from '../constants/Styles'
 
 /**
  * Animated spinner to indicate loading
@@ -12,8 +13,7 @@ export default class Spinner extends React.Component {
     if (!this.props.noDefaultStyle) {
       return {
         ...ITEMS_CENTER,
-        padding: 8,
-        height: 80
+        height: 60
       }
     }
     return null
@@ -25,7 +25,7 @@ export default class Spinner extends React.Component {
         animating={true}
         style={[this.setStyle(), this.props.style]}
         size={this.props.size ? this.props.size : 'large'}
-        color={this.props.color ? this.props.color : RED}
+        color={this.props.color ? this.props.color : YELLOW}
       />
     )
   }
