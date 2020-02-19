@@ -1,14 +1,24 @@
 import React, { useEffect } from 'react'
 import { View, Text, StatusBar, Image, StyleSheet } from 'react-native'
-import NavigationService from '../navigations/NavigationService'
-import { ITEMS_CENTER, DEEP, WHITE } from '../configs/styles'
+import { StackActions } from '@react-navigation/native'
+import { DEEP, WHITE } from '../constants/Colors'
+import { ITEMS_CENTER } from '../constants/Styles'
+import { getItemStorage } from '../actions/storage'
 
-const SplashScreen = () => {
+
+const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      NavigationService.reset('HomeScreen')
-    }, 2000)
+      _checkLogin()
+    }, 1000)
   }, [])
+
+  const _checkLogin = async () => {
+    const login = await getItemStorage('login')
+
+    const screen = login ? 'Kosongan' : 'Login'
+    navigation.dispatch(StackActions.replace(screen))
+  }
 
   return (
     <View style={styles.wrapper}>
