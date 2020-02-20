@@ -24,12 +24,15 @@ const LoginView = ({ navigation }) => {
         <View style={styles.wrapper}>
           <View style={ALIGNING_ITEM_CENTER}>
             <Text style={{ flex: 1 }}>Login instantly with</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={value._onLoginFacebook}>
               <Image
                 style={{ height: 40, width: 40 }}
                 source={require('../../assets/images/facebook.png')} />
             </TouchableOpacity>
-            <TouchableOpacity style={{ marginLeft: 10 }}>
+            <TouchableOpacity
+              onPress={value._onLoginGoogle}
+              style={{ marginLeft: 10 }}>
               <Image
                 style={{ height: 40, width: 40 }}
                 source={require('../../assets/images/google-plus.png')} />
