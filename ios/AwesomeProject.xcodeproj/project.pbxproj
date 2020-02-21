@@ -24,6 +24,7 @@
 		471119FE9A8D4FFCB5F7460B /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 642B7C5E50DC46D1A4745C24 /* Roboto_medium.ttf */; };
 		4A7D5370D2C34589B1F025CE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4836FA1D8E2E4E27A9271A98 /* OpenSans-SemiBold.ttf */; };
 		4FC8A435148A4681A7BB7D9D /* Exo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E5EEE3A70E94052BF6B83F2 /* Exo-SemiBold.ttf */; };
+		52465FC723FFC6FC00AE8DB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52465FC623FFC6FC00AE8DB5 /* GoogleService-Info.plist */; };
 		570136D66FB5BD8392527874 /* libPods-AwesomeProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403C3E5D7A970C5B564BB57E /* libPods-AwesomeProjectTests.a */; };
 		61FDB4D5E5DE4DB0966A119C /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E56AE76F0FA74B5AB0CA6B61 /* rubicon-icon-font.ttf */; };
 		680E69A7891042A1AE3F9663 /* Exo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84005670F268445985E0013D /* Exo-ExtraBold.ttf */; };
@@ -89,6 +90,7 @@
 		4F1EF5B6D2224AB082236A7E /* Exo-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Exo-Black.ttf"; path = "../src/assets/fonts/Exo-Black.ttf"; sourceTree = "<group>"; };
 		516AFEA316934489BB9AD0F3 /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TitilliumWeb-Regular.ttf"; path = "../src/assets/fonts/TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
 		521A1961190C476A80B73A82 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		52465FC623FFC6FC00AE8DB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54E942767A794B34B9EAAC95 /* NeoSansPro_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NeoSansPro_Regular.ttf; path = ../src/assets/fonts/NeoSansPro_Regular.ttf; sourceTree = "<group>"; };
 		59FC2DDB187B43458586D6A3 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lobster-Regular.ttf"; path = "../src/assets/fonts/Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		5ABEBE0867C860D2633E0CCA /* Pods-AwesomeProject-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject-tvOS.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProject-tvOS/Pods-AwesomeProject-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		13B07FAE1A68108700A75B9A /* AwesomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				52465FC623FFC6FC00AE8DB5 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -470,6 +473,7 @@
 				F334A4097D734D6AAE3D2FF9 /* OpenSans-Regular.ttf in Resources */,
 				4A7D5370D2C34589B1F025CE /* OpenSans-SemiBold.ttf in Resources */,
 				93FE3B63FFA3440B8A31352E /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				52465FC723FFC6FC00AE8DB5 /* GoogleService-Info.plist in Resources */,
 				471119FE9A8D4FFCB5F7460B /* Roboto_medium.ttf in Resources */,
 				F60FB01E802E46178ADECFC0 /* Roboto.ttf in Resources */,
 				61FDB4D5E5DE4DB0966A119C /* rubicon-icon-font.ttf in Resources */,
@@ -524,6 +528,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -543,6 +549,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
