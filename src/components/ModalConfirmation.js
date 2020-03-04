@@ -1,8 +1,24 @@
 import React from 'react'
-import { View, Text, Modal, StyleSheet } from 'react-native'
+import PropTypes from 'prop-types'
+import { View, Modal, StyleSheet } from 'react-native'
 import { Button } from 'native-base'
-import { OPACITY_MODAL, WHITE, TEXT_BASE, ITEMS_CENTER, RED } from '../configs/styles'
-import Spinner from '../_components/presesentationals/Spinner'
+import { OPACITY_MODAL, WHITE, RED } from '../constants/Colors'
+import { ITEMS_CENTER } from '../constants/Styles'
+import Spinner from './Spinner'
+import Text from './Text'
+
+
+const propsTypes = {
+  visible: PropTypes.bool.isRequired,
+  handleNo: PropTypes.func.isRequired,
+  handleYes: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  textConfirm: PropTypes.string
+}
+
+const propsDefault = {
+  textConfirm: 'Sedang memuat..'
+}
 
 const ModalConfirmation = ({ visible, handleNo, loading, handleYes, textConfirm }) => (
   <Modal
@@ -16,11 +32,11 @@ const ModalConfirmation = ({ visible, handleNo, loading, handleYes, textConfirm 
           loading ?
             <View style={ITEMS_CENTER}>
               <Spinner color={RED} size="large" />
-              <Text style={{ color: RED }}>Mohon tunggu</Text>
+              <Text style={{ color: RED }}>Mohon tunggu..</Text>
             </View>
             :
             <View style={ITEMS_CENTER}>
-              <Text style={{ ...TEXT_BASE, textAlign: 'center' }}>{textConfirm}</Text>
+              <Text style={{ textAlign: 'center' }}>{textConfirm}</Text>
             </View>
         }
 
@@ -35,7 +51,7 @@ const ModalConfirmation = ({ visible, handleNo, loading, handleYes, textConfirm 
             onPress={handleYes}
             bordered
             style={[styles.btnModal, { borderColor: RED }]}>
-            <Text style={TEXT_BASE}>YES</Text>
+            <Text>YES</Text>
           </Button>
         </View>
       </View>
@@ -70,9 +86,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   edit: {
-    ...TEXT_BASE,
-    color: WHITE,
+    color: WHITE
   },
 })
+
+ModalConfirmation.propTypes = propsTypes
+
+ModalConfirmation.defaultProps = propsDefault
 
 export default ModalConfirmation
