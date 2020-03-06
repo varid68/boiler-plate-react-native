@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { View, Image, StatusBar, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import { LoginContext } from './LoginContext'
-import { OSLO_GRAY, WHITE, BLACK_ALL, BLACK } from '../../constants/Colors'
-import Text from '../../components/Text'
+import { OSLO_GRAY, WHITE, BLACK_ALL, BLACK } from '~/constants/Colors'
+import Text from '~/components/Text'
 import styles from './LoginStyles'
-import { ALIGNING_ITEM_CENTER } from '../../constants/Styles'
+import { ALIGNING_ITEM_CENTER } from '~/constants/Styles'
 import Feather from 'react-native-vector-icons/Feather'
-import Spinner from '../../components/Spinner'
+import Spinner from '~/components/Spinner'
 
 
 const LoginView = ({ navigation }) => {
