@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react'
-import { showToast } from '~/services/common'
-import { insertData } from '~/actions/axios'
-import { storeMultiItemStorage } from '~/actions/storage'
+import { showToast } from 'services/common'
+import { insertData } from 'actions/axios'
+import { storeMultiItemStorage } from 'actions/storage'
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin'
 import { LoginManager, AccessToken } from "react-native-fbsdk"
 

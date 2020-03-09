@@ -8,7 +8,6 @@
       {
         "root": "./src",
         "alias": {
-          "~": "./src",
           "components": "./src/components",
           "actions": "./src/actions",
           "images": "./src/assets/images",

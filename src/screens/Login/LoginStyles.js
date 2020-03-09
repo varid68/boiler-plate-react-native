@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import { GHOST, YELLOW_25 } from '~/constants/Colors'
-import { WP100, WP50, HP100 } from '~/constants/Sizes'
-import { JUSTIFY_CENTER, ITEMS_CENTER } from '~/constants/Styles'
+import { GHOST, YELLOW_25 } from 'constants/Colors'
+import { WP100, WP50, HP100 } from 'constants/Sizes'
+import { JUSTIFY_CENTER, ITEMS_CENTER } from 'constants/Styles'
 
 
 export default StyleSheet.create({

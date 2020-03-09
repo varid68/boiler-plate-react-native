@@ -3,10 +3,10 @@ import { axiosGenerate } from '../configs/axios'
 
 axiosGenerate()
 
-export const getListData = strUrl => {
+export const getListData = (strUrl, params = {}) => {
   return new Promise((resolve, reject) => {
     axios
-      .get(strUrl)
+      .get(strUrl, { params })
       .then(res => {
         if (res.data.status_code === 200) {
           resolve(res.data)
