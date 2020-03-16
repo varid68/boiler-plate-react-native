@@ -104,7 +104,7 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider from './$(tr a-z A-Z <<< 
 
 const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider navigation={navigation}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}View navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider>
   )
