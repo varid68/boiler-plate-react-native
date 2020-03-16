@@ -7,8 +7,8 @@ cd $(tr a-z A-Z <<< ${1:0:1})${1:1}
 case $2 in
   -d)
 echo "import React, { useState, useEffect, createContext } from 'react'
-import { showToast } from '../../services/common'
-import { getData } from '../../actions'
+import { showToast, addRemoveListenerBack } from 'services/common'
+import { getListData } from 'actions/axios'
 
 export const $(tr a-z A-Z <<< ${1:0:1})${1:1}Context = createContext()
 
@@ -25,6 +25,8 @@ function $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider(props) {
 
   }, [])
 
+  addRemoveListenerBack(props)
+
   const _fetchLoadMore = (param = {}) => {
     let clone = { ...items }
     const params = {
@@ -32,7 +34,7 @@ function $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider(props) {
       limit: 7,
       offset: clone['offset'] + 7,
       sortby: 'id_surat',
-      orderby: clone['order']
+      order: clone['order']
     }
 
     // DISABLE LOADING FOOTER END ITEM
@@ -41,7 +43,7 @@ function $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider(props) {
       return false
     }
 
-    getData('/surat')
+    getListData('/surat')
       .then(res => {
         setItems({
           ...items,
@@ -66,7 +68,7 @@ function $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider(props) {
 
     setLoading({ ...loading, [loader]: true })
 
-    getData('/surat')
+    getListData('/surat')
       .then(res => {
         setItems({
           ...items,
@@ -108,13 +110,18 @@ const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation }) => {
   )
 }
 
+$(tr a-z A-Z <<< ${1:0:1})${1:1}Screen.navigationOptions = {
+  title: '$(tr a-z A-Z <<< ${1:0:1})${1:1}'
+}
+
 export default $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen" > "$(tr a-z A-Z <<< ${1:0:1})${1:1}Screen.js"
 
 
 echo "import React, { useContext } from 'react'
 import { View } from 'react-native'
-import Text from '../../components/Text'
+import Text from 'components/Text'
 import SafeAreaView from 'react-native-safe-area-view'
+
 import { $(tr a-z A-Z <<< ${1:0:1})${1:1}Context } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
