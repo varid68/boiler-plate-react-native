@@ -110,17 +110,13 @@ const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation }) => {
   )
 }
 
-$(tr a-z A-Z <<< ${1:0:1})${1:1}Screen.navigationOptions = {
-  title: '$(tr a-z A-Z <<< ${1:0:1})${1:1}'
-}
-
 export default $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen" > "$(tr a-z A-Z <<< ${1:0:1})${1:1}Screen.js"
 
 
 echo "import React, { useContext } from 'react'
 import { View } from 'react-native'
 import Text from 'components/Text'
-import SafeAreaView from 'react-native-safe-area-view'
+import SafeAreaView from 'react-native-safe-area-context'
 
 import { $(tr a-z A-Z <<< ${1:0:1})${1:1}Context } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
@@ -255,7 +251,7 @@ export default $(tr a-z A-Z <<< ${1:0:1})${1:1}ListScreen" > "$(tr a-z A-Z <<< $
 echo "import React, { useContext } from 'react'
 import { View } from 'react-native'
 import Text from '../../components/Text'
-import SafeAreaView from 'react-native-safe-area-view'
+import SafeAreaView from 'react-native-safe-area-context'
 import { $(tr a-z A-Z <<< ${1:0:1})${1:1}ListContext } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
@@ -318,7 +314,7 @@ export default $(tr a-z A-Z <<< ${1:0:1})${1:1}CreateScreen" > "$(tr a-z A-Z <<<
 echo "import React, { useContext } from 'react'
 import { View } from 'react-native'
 import Text from '../../components/Text'
-import SafeAreaView from 'react-native-safe-area-view'
+import SafeAreaView from 'react-native-safe-area-context'
 import { $(tr a-z A-Z <<< ${1:0:1})${1:1}CreateContext } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
@@ -381,7 +377,7 @@ export default $(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateScreen" > "$(tr a-z A-Z <<<
 echo "import React, { useContext } from 'react'
 import { View } from 'react-native'
 import Text from '../../components/Text'
-import SafeAreaView from 'react-native-safe-area-view'
+import SafeAreaView from 'react-native-safe-area-context'
 import { $(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateContext } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
@@ -445,7 +441,7 @@ export default $(tr a-z A-Z <<< ${1:0:1})${1:1}DetailScreen" > "$(tr a-z A-Z <<<
 echo "import React, { useContext } from 'react'
 import { View } from 'react-native'
 import Text from '../../components/Text'
-import SafeAreaView from 'react-native-safe-area-view'
+import SafeAreaView from 'react-native-safe-area-context'
 import { $(tr a-z A-Z <<< ${1:0:1})${1:1}DetailContext } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
@@ -470,7 +466,72 @@ export default StyleSheet.create({
 ;;
 
 *)
-cd .. && rm -r "$(tr a-z A-Z <<< ${1:0:1})${1:1}"
-echo "Masukin parameter dong bray [-c|-d]"
+echo "import React, { useState, useEffect, createContext } from 'react'
+import { showToast, addRemoveListenerBack } from 'services/common'
+import { getListData } from 'actions/axios'
+
+export const $(tr a-z A-Z <<< ${1:0:1})${1:1}Context = createContext()
+
+function $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider(props) {
+  useEffect(() => {
+
+  }, [])
+
+  addRemoveListenerBack(props)
+
+  return (
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}Context.Provider 
+      value={{ }}>
+      {props.children}
+    </$(tr a-z A-Z <<< ${1:0:1})${1:1}Context.Provider>
+  )
+}
+
+export default $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider" > "$(tr a-z A-Z <<< ${1:0:1})${1:1}Context.js"
+
+
+echo "import React from 'react'
+import $(tr a-z A-Z <<< ${1:0:1})${1:1}View from './$(tr a-z A-Z <<< ${1:0:1})${1:1}View'
+import $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
+
+
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation }) => {
+  return (
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider navigation={navigation}>
+      <$(tr a-z A-Z <<< ${1:0:1})${1:1}View navigation={navigation} />
+    </$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider>
+  )
+}
+
+export default $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen" > "$(tr a-z A-Z <<< ${1:0:1})${1:1}Screen.js"
+
+
+echo "import React, { useContext } from 'react'
+import { View } from 'react-native'
+import Text from 'components/Text'
+import SafeAreaView from 'react-native-safe-area-context'
+
+import { $(tr a-z A-Z <<< ${1:0:1})${1:1}Context } from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
+
+
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}View = ({ navigation }) => {
+  const value = useContext($(tr a-z A-Z <<< ${1:0:1})${1:1}Context)
+
+  return (
+    <Text>INI PAGE $(tr a-z A-Z <<< ${1:0:1})${1:1}</Text>
+  )
+}
+
+export default $(tr a-z A-Z <<< ${1:0:1})${1:1}View" > "$(tr a-z A-Z <<< ${1:0:1})${1:1}View.js"
+
+
+echo "import { StyleSheet } from 'react-native'
+
+
+export default StyleSheet.create({
+
+})" > "$(tr a-z A-Z <<< ${1:0:1})${1:1}Styles.js"
+# cd .. && rm -r "$(tr a-z A-Z <<< ${1:0:1})${1:1}"
+# echo "Masukin parameter dong bray [-c|-d]"
 ;;
 esac
