@@ -1,4 +1,5 @@
-import { ToastAndroid } from 'react-native'
+import { useEffect } from 'react'
+import { ToastAndroid, BackHandler } from 'react-native'
 
 // FORMAT RUPIAH
 export function setCurrency(bilangan) {
@@ -28,4 +29,19 @@ export function capitalize(text) {
     .join(' ')
 
   return result
+}
+
+// 
+export function addRemoveListenerBack(props) {
+  let backHandler = ''
+  useEffect(() => {
+    backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      props.navigation.goBack()
+      return true
+    })
+
+    return () => {
+      backHandler.remove()
+    }
+  }, [])
 }

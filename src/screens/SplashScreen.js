@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { View, Text, StatusBar, Image, StyleSheet } from 'react-native'
 import { StackActions } from '@react-navigation/native'
-import { DEEP, WHITE } from '../constants/Colors'
-import { ITEMS_CENTER } from '../constants/Styles'
-import { getItemStorage } from '../actions/storage'
+import { DEEP, WHITE } from 'constants/Colors'
+import { ITEMS_CENTER } from 'constants/Styles'
+import { getItemStorage } from 'actions/storage'
 
 
 const SplashScreen = ({ navigation }) => {
@@ -15,9 +15,19 @@ const SplashScreen = ({ navigation }) => {
 
   const _checkLogin = async () => {
     const login = await getItemStorage('login')
+    const first_install = await getItemStorage('first_install')
+    // let screen = ''
 
-    const screen = login ? 'Kosongan' : 'Login'
-    navigation.dispatch(StackActions.replace(screen))
+    // if (login) {
+    //   screen = 'Kosongan'
+    // } else if (!first_install) {
+    //   screen = 'Walkthrough'
+    // } else {
+    //   screen = 'Login'
+    // }
+
+    // let screen = login ? 'Kosongan' : first_install == null ? 'Walkthrough' : 'Login'
+    navigation.dispatch(StackActions.replace('Walkthrough'))
   }
 
   return (

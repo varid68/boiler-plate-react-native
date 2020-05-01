@@ -13,7 +13,8 @@
           "images": "./src/assets/images",
           "configs": "./src/configs",
           "constants": "./src/constants",
-          "services": "./src/services"
+          "services": "./src/services",
+          "screens": "./src/screens"
         },
         "cwd": "packagejson"
       }

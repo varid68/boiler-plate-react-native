@@ -1,12 +1,23 @@
 import axios from 'axios'
-import { axiosGenerate } from '../configs/axios'
+import { getItemStorage } from 'actions/storage'
 
-axiosGenerate()
 
-export const getListData = (strUrl, params = {}) => {
+export const getListData = async (url, params = { limit: 100 }) => {
+  const value = await getItemStorage('reduxPersist:loginReducer')
+
   return new Promise((resolve, reject) => {
-    axios
-      .get(strUrl, { params })
+    axios({
+      method: 'get',
+      url,
+      timeout: 8000,
+      timeoutErrorMessage: 'Request Timeout',
+      params,
+      headers: {
+        'Authorization': value.data.token,
+        'X-Client': 'Mobile',
+        'Content-Type': 'application/json'
+      }
+    })
       .then(res => {
         if (res.data.status_code === 200) {
           resolve(res.data)
@@ -17,15 +28,86 @@ export const getListData = (strUrl, params = {}) => {
         reject(res.data)
       })
       .catch(e => {
-        reject(e.response)
+        reject(e.response.data)
       })
   })
 }
 
-export const insertData = (strUrl, body) => {
+export const insertData = async (url, data) => {
+  const value = await getItemStorage('reduxPersist:loginReducer')
+
   return new Promise((resolve, reject) => {
-    axios
-      .post(strUrl, body)
+    axios({
+      method: 'post',
+      url,
+      timeout: 8000,
+      timeoutErrorMessage: 'Request Timeout',
+      data,
+      headers: {
+        'Authorization': value.data.token,
+        'X-Client': 'Mobile',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => {
+        if (res.data.status_code === 200 || res.data.status_code === 201) {
+          resolve(res.data.payload)
+          return
+        }
+
+        reject(res.data)
+      })
+      .catch(e => {
+        reject(e.response.data)
+      })
+  })
+}
+
+export const editData = async (url, data) => {
+  const value = await getItemStorage('reduxPersist:loginReducer')
+
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'put',
+      url,
+      timeout: 8000,
+      timeoutErrorMessage: 'Request Timeout',
+      data,
+      headers: {
+        'Authorization': value.data.token,
+        'X-Client': 'Mobile',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => {
+        if (res.data.status_code === 200 || res.data.status_code === 201) {
+          resolve(res.data.payload)
+          return
+        }
+
+        reject(res.data)
+      })
+      .catch(e => {
+        reject(e.response.data)
+      })
+  })
+}
+
+export const deleteData = async (url) => {
+  const value = await getItemStorage('reduxPersist:loginReducer')
+
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'delete',
+      url,
+      timeout: 8000,
+      timeoutErrorMessage: 'Request Timeout',
+      headers: {
+        'Authorization': value.data.token,
+        'X-Client': 'Mobile',
+        'Content-Type': 'application/json'
+      }
+    })
       .then(res => {
         if (res.data.status_code === 200) {
           resolve(res.data.payload)
@@ -35,43 +117,7 @@ export const insertData = (strUrl, body) => {
         reject(res.data)
       })
       .catch(e => {
-        reject(e.response)
-      })
-  })
-}
-
-export const editData = (strUrl, body) => {
-  return new Promise((resolve, reject) => {
-    axios
-      .put(strUrl, body)
-      .then(res => {
-        if (res.data.status_code === 200) {
-          resolve(res.data.payload)
-          return
-        }
-
-        reject(res.data)
-      })
-      .catch(e => {
-        reject(e.response)
-      })
-  })
-}
-
-export const deleteData = strUrl => {
-  return new Promise((resolve, reject) => {
-    axios
-      .delete(strUrl)
-      .then(res => {
-        if (res.data.status_code === 200) {
-          resolve(res.data.payload)
-          return
-        }
-
-        reject(res.data)
-      })
-      .catch(e => {
-        reject(e.response)
+        reject(e.response.data)
       })
   })
 }
