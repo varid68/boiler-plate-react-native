@@ -53,8 +53,8 @@ const LoginView = ({ navigation }) => {
             Username / Email
             </Text>
           <TextInput
-            onChangeText={text => value._onChangeFields('user_email', text)}
-            value={value.fields.user_email}
+            onChangeText={text => value._onChangeFields('username', text)}
+            value={value.fields.username}
             style={styles.inputLogin} />
 
           <Text
@@ -68,8 +68,8 @@ const LoginView = ({ navigation }) => {
           }}>
             <TextInput
               secureTextEntry={value.showPassword}
-              onChangeText={text => value._onChangeFields('user_password', text)}
-              value={value.fields.user_password}
+              onChangeText={text => value._onChangeFields('password', text)}
+              value={value.fields.password}
               style={styles.inputLogin2} />
             <TouchableOpacity
               onPress={value._togglePassword}

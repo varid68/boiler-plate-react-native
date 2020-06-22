@@ -1,16 +1,17 @@
 import React, { createContext, useState, useEffect } from 'react'
 import { showToast } from 'services/common'
-import { insertData } from 'actions/axios'
-import { storeMultiItemStorage } from 'actions/storage'
+import { storeItemStorage } from 'actions/storage'
+import { BASE_URL } from 'configs/configUrl'
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin'
 import { LoginManager, AccessToken } from "react-native-fbsdk"
+import axios from 'axios'
 
 export const LoginContext = createContext()
 
-function LoginContextProvider(prop) {
+function LoginContextProvider(props) {
   const [fields, setFields] = useState({
-    user_email: '',
-    user_password: ''
+    username: '',
+    password: ''
   })
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(true)
@@ -56,12 +57,12 @@ function LoginContextProvider(prop) {
   const _onChangeFields = (name, value) => setFields({ ...fields, [name]: value })
 
   const _validate = () => {
-    if (fields.user_email == '') {
+    if (fields.username == '') {
       showToast('Username kosong')
       return false
     }
 
-    if (fields.user_password == '') {
+    if (fields.password == '') {
       showToast('password kosong')
       return false
     }
@@ -69,16 +70,21 @@ function LoginContextProvider(prop) {
     _onSubmit()
   }
 
-  const _onSubmit = () => {
+  const _onSubmit = async () => {
     setLoading(true)
 
-    insertData('/auth', fields)
-      .then(res => {
-        storeMultiItemStorage([['user', res], ['login', true]])
-        prop.navigation.navigate('Kosongan')
-      })
-      .catch(e => showToast(e.description))
-      .then(() => setLoading(false))
+    try {
+      const res = await axios.post(`${BASE_URL}/v1/auth`, fields)
+      await storeItemStorage('user', res.data.payload)
+      await storeItemStorage('login', true)
+      props.navigation.replace('Kosongan')
+    } catch (error) {
+      if (error) {
+        showToast(error.response.data.description)
+      }
+    }
+
+    setLoading(false)
   }
 
 
@@ -94,7 +100,7 @@ function LoginContextProvider(prop) {
         _onLoginGoogle,
         _onLoginFacebook
       }}>
-      {prop.children}
+      {props.children}
     </LoginContext.Provider>
   )
 }
