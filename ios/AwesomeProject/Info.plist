@@ -20,6 +20,21 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.326692148381-p99avpqsegoqfsglgdc16m5k8jquflge</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -71,6 +86,18 @@
 		<string>OpenSans-Regular.ttf</string>
 		<string>OpenSans-SemiBold.ttf</string>
 		<string>OpenSans-SemiBoldItalic.ttf</string>
+		<string>SFProDisplay-Regular.ttf</string>
+		<string>TitilliumWeb-Regular.ttf</string>
+		<string>NeoSansPro_Regular.ttf</string>
+		<string>Exo-Black.ttf</string>
+		<string>Exo-Bold.ttf</string>
+		<string>Exo-ExtraBold.ttf</string>
+		<string>Exo-ExtraLight.ttf</string>
+		<string>Exo-Light.ttf</string>
+		<string>Exo-Medium.ttf</string>
+		<string>Exo-Regular.ttf</string>
+		<string>Exo-SemiBold.ttf</string>
+		<string>Exo-Thin.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -86,5 +113,35 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb923051184758713</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>923051184758713</string>
+	<key>FacebookDisplayName</key>
+	<string>react-native</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>    
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string> 
+		<string>fbauth</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>

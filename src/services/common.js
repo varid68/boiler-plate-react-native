@@ -1,4 +1,6 @@
-import { ToastAndroid } from 'react-native'
+import { useEffect } from 'react'
+import { ToastAndroid, BackHandler } from 'react-native'
+import Snackbar from 'react-native-snackbar'
 
 // FORMAT RUPIAH
 export function setCurrency(bilangan) {
@@ -12,12 +14,19 @@ export function setCurrency(bilangan) {
 // TAMPILKAN TOAST
 export function showToast(text, option = null) {
   const duration = option == null ? ToastAndroid.LONG : ToastAndroid.SHORT
-  ToastAndroid.showWithGravityAndOffset(
-    text,
-    duration,
-    ToastAndroid.BOTTOM,
-    25, 50,
-  )
+  if (Platform.OS === 'ios') {
+    Snackbar.show({
+      text,
+      duration: Snackbar.LENGTH_LONG,
+    })
+  } else {
+    ToastAndroid.showWithGravityAndOffset(
+      text,
+      duration,
+      ToastAndroid.BOTTOM,
+      25, 50,
+    )
+  }
 }
 
 // KAPITALISASI TIAP KATA
@@ -28,4 +37,19 @@ export function capitalize(text) {
     .join(' ')
 
   return result
+}
+
+// 
+export function addRemoveListenerBack(props) {
+  let backHandler = ''
+  useEffect(() => {
+    backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      props.navigation.goBack()
+      return true
+    })
+
+    return () => {
+      backHandler.remove()
+    }
+  }, [])
 }

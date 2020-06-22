@@ -1,39 +1,27 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation'
-import {
-  WHITE, RED,
-  DEFAULT_FONT_SIZE, DEFAULT_FONT_FAMILY_BOLD
-} from '../configs/styles'
 
-import SplashPage from '../components/SplashScreen'
-import SuratPage from '../components/containers/Surat/List'
-import SuratDetailPage from '../components/containers/Surat/Detail'
-import SuratAddPage from '../components/containers/Surat/Create'
-import SuratEditPage from '../components/containers/Surat/Update'
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import LoginScreen from 'screens/Login/LoginScreen'
+import SplashScreen from 'screens/SplashScreen'
+import WalkthroughScreen from 'screens/Walkthrough'
+import KosonganScreen from 'screens/Kosongan/KosonganScreen'
 
-import HomePage from '../components/containers/Home'
 
-const AppNavigator = createStackNavigator({
-  SplashScreen: { screen: SplashPage },
-  SuratScreen: { screen: SuratPage },
-  SuratDetailScreen: { screen: SuratDetailPage },
-  SuratAddScreen: { screen: SuratAddPage },
-  SuratEditScreen: { screen: SuratEditPage },
-  HomeScreen: { screen: HomePage }
-}, {
-  initialRouteName: 'SplashScreen',
-  defaultNavigationOptions: {
-    headerTintColor: WHITE,
-    headerStyle: {
-      backgroundColor: RED,
-      height: 70,
-    },
-    headerBackTitle: null,
-    headerTitleStyle: {
-      fontFamily: DEFAULT_FONT_FAMILY_BOLD,
-      fontSize: DEFAULT_FONT_SIZE,
-    },
-  },
-  headerLayoutPreset: 'center'
-})
+const Stack = createStackNavigator()
 
-export default createAppContainer(AppNavigator)
+function App() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+      initialRouteName='Splash'>
+      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Walkthrough" component={WalkthroughScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Kosongan" component={KosonganScreen} />
+    </Stack.Navigator>
+  )
+}
+
+export default App
