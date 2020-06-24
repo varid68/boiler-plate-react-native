@@ -12,8 +12,8 @@ import { storeItemStorage } from 'actions/storage'
 
 const Walkthrough = ({ navigation }) => {
 
-  const _setFirstInstall = () => {
-    storeItemStorage('first_instal', true)
+  const _setFirstInstall = async () => {
+    await storeItemStorage('first_install', false)
     navigation.dispatch(StackActions.replace('Login'))
   }
 
