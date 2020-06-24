@@ -15,7 +15,17 @@ const SplashScreen = ({ navigation }) => {
 
   const _checkLogin = async () => {
     const login = await getItemStorage('login')
-    let screen = login ? 'Kosongan' : 'Login'
+    const first_install = await getItemStorage('first_install')
+
+    let screen = ''
+
+    if (first_install == null && login == null) {
+      screen = 'Walkthrough'
+    } else if (!first_install && !login) {
+      screen = 'Login'
+    } else if (!first_install && login) {
+      screen = 'Kosongan'
+    }
 
     navigation.dispatch(StackActions.replace(screen))
   }
