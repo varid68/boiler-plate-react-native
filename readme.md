@@ -4,7 +4,11 @@
 
 ### `Cara Generate Screen`
 - ```$ ./artisan.sh home -d```
-- maka akan ter-generate satu folder di dalam "src/screens" yang berisi 4 file (HomeContext.js, HomeScreen.js, HomeView.js, HomeStyles.js)
+- maka akan ter-generate satu folder di dalam "src/screens" yang berisi:
+  - HomeContext.js
+  - HomeScreen.js
+  - HomeView.js
+  - HomeStyles.js
 - register "HomeScreen" di AppNavigator.js
 
 <br>
