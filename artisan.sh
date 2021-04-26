@@ -102,9 +102,9 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}View from './$(tr a-z A-Z <<< ${1:0:1})${
 import $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
-const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation }) => {
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation, route }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider navigation={navigation}>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider navigation={navigation} route={route}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}View navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider>
   )
@@ -237,9 +237,9 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}ListView from './$(tr a-z A-Z <<< ${1:0:1
 import $(tr a-z A-Z <<< ${1:0:1})${1:1}ListContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
-const $(tr a-z A-Z <<< ${1:0:1})${1:1}ListScreen = ({ navigation }) => {
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}ListScreen = ({ navigation, route }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ListContextProvider>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ListContextProvider navigation={navigation} route={route}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}ListView navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}ListContextProvider>
   )
@@ -300,9 +300,9 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}CreateView from './$(tr a-z A-Z <<< ${1:0
 import $(tr a-z A-Z <<< ${1:0:1})${1:1}CreateContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
-const $(tr a-z A-Z <<< ${1:0:1})${1:1}CreateScreen = ({ navigation }) => {
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}CreateScreen = ({ navigation, route }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}CreateContextProvider>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}CreateContextProvider navigation={navigation} route={route}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}CreateView navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}CreateContextProvider>
   )
@@ -363,9 +363,9 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateView from './$(tr a-z A-Z <<< ${1:0
 import $(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
-const $(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateScreen = ({ navigation }) => {
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateScreen = ({ navigation, route }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateContextProvider>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateContextProvider navigation={navigation} route={route}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateView navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}UpdateContextProvider>
   )
@@ -427,9 +427,9 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}DetailView from './$(tr a-z A-Z <<< ${1:0
 import $(tr a-z A-Z <<< ${1:0:1})${1:1}DetailContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
-const $(tr a-z A-Z <<< ${1:0:1})${1:1}DetailScreen = ({ navigation }) => {
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}DetailScreen = ({ navigation, route }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}DetailContextProvider>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}DetailContextProvider navigation={navigation} route={route}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}DetailView navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}DetailContextProvider>
   )
@@ -495,9 +495,9 @@ import $(tr a-z A-Z <<< ${1:0:1})${1:1}View from './$(tr a-z A-Z <<< ${1:0:1})${
 import $(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider from './$(tr a-z A-Z <<< ${1:0:1})${1:1}Context'
 
 
-const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation }) => {
+const $(tr a-z A-Z <<< ${1:0:1})${1:1}Screen = ({ navigation, route }) => {
   return (
-    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider navigation={navigation}>
+    <$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider navigation={navigation} route={route}>
       <$(tr a-z A-Z <<< ${1:0:1})${1:1}View navigation={navigation} />
     </$(tr a-z A-Z <<< ${1:0:1})${1:1}ContextProvider>
   )
