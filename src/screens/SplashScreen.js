@@ -3,32 +3,12 @@ import { View, Text, StatusBar, Image, StyleSheet } from 'react-native'
 import { StackActions } from '@react-navigation/native'
 import { DEEP, WHITE } from 'constants/Colors'
 import { ITEMS_CENTER } from 'constants/Styles'
-import { getItemStorage } from 'actions/storage'
 
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
-    setTimeout(() => {
-      _checkLogin()
-    }, 1000)
+    navigation.dispatch(StackActions.replace('Kosongan'))
   }, [])
-
-  const _checkLogin = async () => {
-    const login = await getItemStorage('login')
-    const first_install = await getItemStorage('first_install')
-
-    let screen = ''
-
-    if (first_install == null && login == null) {
-      screen = 'Walkthrough'
-    } else if (!first_install && !login) {
-      screen = 'Login'
-    } else if (!first_install && login) {
-      screen = 'Kosongan'
-    }
-
-    navigation.dispatch(StackActions.replace(screen))
-  }
 
   return (
     <View style={styles.wrapper}>
