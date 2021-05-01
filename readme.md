@@ -22,7 +22,9 @@
 
 <br>
 
-### Directory Structure
+#### `SHORTCUT IMPORT FILE LOOK AT FILE .babelrc || CUSTOM IF YOU WANT`
+
+### `DIRECTORY STRUCTURE`
 ```bash
 ├── src
 │   ├── actions
@@ -42,6 +44,10 @@
 │   ├── i18n (translate label multi language)
 │   ├── navigations
 │   |   └── AppNavigator.js (register all screens)
+│   ├── redux
+│   │   ├── reducers (define all reducers)
+│   │   ├── types.js (define all ACTION redux)
+│   |   └── store.js (register all reducers)
 │   ├── screens
 │   │   ├── Home
 │   │   |    ├── HomeContext.js
