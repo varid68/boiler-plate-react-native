@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, SafeAreaView } from 'react-native'
 import Text from 'components/Text'
-import SafeAreaView from 'react-native-safe-area-context'
 import { OSLO_GRAY, RED, WHITE } from 'constants/Colors'
 
 import { KosonganContext } from './KosonganContext'
@@ -12,46 +11,48 @@ const KosonganView = ({ navigation }) => {
   const value = useContext(KosonganContext)
 
   return (
-    <View style={{
-      ...JUSTIFY_CENTER,
-      padding: 15
-    }}>
-      <TouchableOpacity
-        onPress={value._addCounter}
-        style={{
-          flex: 1,
-          backgroundColor: RED,
-          paddingVertical: 10,
-          borderRadius: 8
-        }}>
-        <Text
-          centered
-          color={OSLO_GRAY}
-          size='xmini'
-          color={WHITE}>
-          TAMBAH
+    <SafeAreaView>
+      <View style={{
+        ...JUSTIFY_CENTER,
+        padding: 15
+      }}>
+        <TouchableOpacity
+          onPress={value._addCounter}
+          style={{
+            flex: 1,
+            backgroundColor: RED,
+            paddingVertical: 10,
+            borderRadius: 8
+          }}>
+          <Text
+            centered
+            color={OSLO_GRAY}
+            size='xmini'
+            color={WHITE}>
+            TAMBAH
         </Text>
-      </TouchableOpacity>
+        </TouchableOpacity>
 
-      <Text centered style={{ flex: .5 }}>{value.counter}</Text>
+        <Text centered style={{ flex: .5 }}>{value.counter}</Text>
 
-      <TouchableOpacity
-        onPress={value._substractCounter}
-        style={{
-          flex: 1,
-          backgroundColor: RED,
-          paddingVertical: 10,
-          borderRadius: 8
-        }}>
-        <Text
-          centered
-          color={OSLO_GRAY}
-          size='xmini'
-          color={WHITE}>
-          KURANG
+        <TouchableOpacity
+          onPress={value._substractCounter}
+          style={{
+            flex: 1,
+            backgroundColor: RED,
+            paddingVertical: 10,
+            borderRadius: 8
+          }}>
+          <Text
+            centered
+            color={OSLO_GRAY}
+            size='xmini'
+            color={WHITE}>
+            KURANG
         </Text>
-      </TouchableOpacity>
-    </View>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   )
 }
 
