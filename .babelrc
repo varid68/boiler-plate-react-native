@@ -14,7 +14,8 @@
           "configs": "./src/configs",
           "constants": "./src/constants",
           "services": "./src/services",
-          "screens": "./src/screens"
+          "screens": "./src/screens",
+          "@redux": "./src/redux"
         },
         "cwd": "packagejson"
       }
