@@ -17,3 +17,21 @@ export const ITEMS_CENTER = {
   alignItems: 'center',
   justifyContent: 'center'
 }
+
+export const LIST_ITEM_BASE_CENTER = {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center'
+}
+
+export const LIST_ITEM_BASE_END = {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end'
+}
+
+export const ROW_CENTER = {
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
