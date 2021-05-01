@@ -5,6 +5,7 @@ import SafeAreaView from 'react-native-safe-area-context'
 import { OSLO_GRAY, RED, WHITE } from 'constants/Colors'
 
 import { KosonganContext } from './KosonganContext'
+import { JUSTIFY_CENTER } from 'constants/Styles'
 
 
 const KosonganView = ({ navigation }) => {
@@ -12,13 +13,13 @@ const KosonganView = ({ navigation }) => {
 
   return (
     <View style={{
-      padding: 15,
-      flex: 1,
-      justifyContent: 'center'
+      ...JUSTIFY_CENTER,
+      padding: 15
     }}>
       <TouchableOpacity
-        onPress={value._logout}
+        onPress={value._addCounter}
         style={{
+          flex: 1,
           backgroundColor: RED,
           paddingVertical: 10,
           borderRadius: 8
@@ -28,7 +29,26 @@ const KosonganView = ({ navigation }) => {
           color={OSLO_GRAY}
           size='xmini'
           color={WHITE}>
-          Logout
+          TAMBAH
+        </Text>
+      </TouchableOpacity>
+
+      <Text centered style={{ flex: .5 }}>{value.counter}</Text>
+
+      <TouchableOpacity
+        onPress={value._substractCounter}
+        style={{
+          flex: 1,
+          backgroundColor: RED,
+          paddingVertical: 10,
+          borderRadius: 8
+        }}>
+        <Text
+          centered
+          color={OSLO_GRAY}
+          size='xmini'
+          color={WHITE}>
+          KURANG
         </Text>
       </TouchableOpacity>
     </View>
